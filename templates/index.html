@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wi-Fi Bandwidth Monitor</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="top">
+  <h1>Wi-Fi Bandwidth Monitor</h1>
+  <p>Auto-Throttling Wi-Fi Bandwidth Alert System - CN Project</p>
+</div>
+
+<div class="page">
+  <table class="summary">
+    <tr>
+      <td>Mode: <b id="mode"></b></td>
+      <td>Network time: <b id="simtime"></b></td>
+      <td>Total usage: <b id="total"></b> Mbps</td>
+      <td>Devices: <b id="count"></b></td>
+      <td>Throttled: <b id="throttled"></b></td>
+      <td>Samples logged: <b id="samples"></b></td>
+    </tr>
+  </table>
+  <p class="rules" id="rules"></p>
+
+  <h2>Live Readings</h2>
+  <p>Device:
+    <select id="pick"></select>
+    &nbsp; Current usage: <b id="current"></b> Mbps
+  </p>
+  <table class="list small readings">
+    <thead><tr><th>Network time</th><th>Usage (Mbps)</th><th>Change</th><th>Note</th></tr></thead>
+    <tbody id="readings"></tbody>
+  </table>
+
+  <h2>Devices</h2>
+  <table class="list">
+    <thead>
+      <tr><th>Name</th><th>Type</th><th>IP</th><th>MAC</th><th>Usage (Mbps)</th><th>Change</th><th>Limit (Mbps)</th><th>Status</th><th>Actions</th></tr>
+    </thead>
+    <tbody id="devices"></tbody>
+  </table>
+
+  <div class="cols">
+    <div class="left">
+      <h2>Event Log <button id="clear">Clear</button></h2>
+      <table class="list small">
+        <thead><tr><th>Time</th><th>Device</th><th>Action</th><th>Usage / Limit</th><th>Detail</th></tr></thead>
+        <tbody id="events"></tbody>
+      </table>
+    </div>
+    <div class="right">
+      <h2>Alerts</h2>
+      <div id="alerts"></div>
+      <h2>tc Commands</h2>
+      <pre id="commands"></pre>
+    </div>
+  </div>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>
